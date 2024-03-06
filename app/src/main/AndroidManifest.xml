@@ -13,7 +13,7 @@
         android:theme="@style/Theme.FundamentalAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".fragment.FlexibleFragment"
+            android:name=".learnfragment.FlexibleFragment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
