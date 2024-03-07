@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.fundamentalandroid.R
 import com.example.fundamentalandroid.databinding.FragmentDetailCategoryNavigationBinding
 
@@ -26,11 +27,16 @@ class DetailCategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dataName = arguments?.getString(CategoryFragment.EXTRA_NAME)
-        val dataDescription =arguments?.getLong(CategoryFragment.EXTRA_STOCK)
+        val dataName = DetailCategoryFragmentArgs.fromBundle(arguments as Bundle).name
+        val dataDescription = DetailCategoryFragmentArgs.fromBundle(arguments as Bundle).stock
 
         binding.tvCategoryNameNavigation.text = dataName
         binding.tvCategoryDescription.text = "Stock : $dataDescription"
+
+        binding.btnHome.setOnClickListener (
+            Navigation.createNavigateOnClickListener(R.id.action_detailCategoryFragment_to_homeFragmentNavigation)
+        )
+
     }
 
     override fun onDestroy() {

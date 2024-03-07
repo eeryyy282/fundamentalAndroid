@@ -12,10 +12,16 @@
         tools:layout="@layout/fragment_home_navigation" >
         <action
             android:id="@+id/action_homeFragmentNavigation_to_categoryFragment"
-            app:destination="@id/categoryFragment" />
+            app:destination="@id/categoryFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_homeFragmentNavigation_to_profileActivity"
-            app:destination="@id/profileActivity" />
+            app:destination="@id/profileActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_file" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
@@ -35,5 +41,19 @@
         android:id="@+id/detailCategoryFragment"
         android:name="com.example.fundamentalandroid.learnnavigation.fragment.DetailCategoryFragment"
         android:label="fragment_detail_category_navigation"
-        tools:layout="@layout/fragment_detail_category_navigation" />
+        tools:layout="@layout/fragment_detail_category_navigation" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="default name"/>
+        <argument
+            android:name="stock"
+            app:argType="long"
+            android:defaultValue="0L"/>
+        <action
+            android:id="@+id/action_detailCategoryFragment_to_homeFragmentNavigation"
+            app:destination="@id/homeFragmentNavigation"
+            app:popUpTo="@id/homeFragmentNavigation"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
