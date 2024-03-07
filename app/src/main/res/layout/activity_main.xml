@@ -22,14 +22,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonMoveToFlexibleFragment"
+        android:id="@+id/buttonMoveToLearnFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
-        android:text="Flexible Fragment"
+        android:text="@string/learn_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/buttonMoveToLearnNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/learn_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMoveToLearnFragment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

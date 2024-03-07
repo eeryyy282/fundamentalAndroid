@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragmentNavigation">
+
+    <fragment
+        android:id="@+id/homeFragmentNavigation"
+        android:name="com.example.fundamentalandroid.learnnavigation.fragment.HomeFragmentNavigation"
+        android:label="fragment_home_navigation"
+        tools:layout="@layout/fragment_home_navigation" >
+        <action
+            android:id="@+id/action_homeFragmentNavigation_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_homeFragmentNavigation_to_profileActivity"
+            app:destination="@id/profileActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.fundamentalandroid.learnnavigation.fragment.CategoryFragment"
+        android:label="fragment_category_navigation"
+        tools:layout="@layout/fragment_category_navigation" />
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="com.example.fundamentalandroid.learnnavigation.ProfileActivity"
+        android:label="activity_profile_navigation"
+        tools:layout="@layout/activity_profile_navigation" />
+</navigation>

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.fundamentalandroid.learnfragment.FlexibleFragment
+import com.example.fundamentalandroid.learnnavigation.MainNavigation
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,16 +22,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             insets
         }
 
-        val btnMoveToFlexibleFragment: Button = findViewById(R.id.buttonMoveToFlexibleFragment)
-        btnMoveToFlexibleFragment.setOnClickListener(this)
+        val btnMoveToLearnFragment: Button = findViewById(R.id.buttonMoveToLearnFragment)
+        btnMoveToLearnFragment.setOnClickListener(this)
+
+        val btnMoveToLearnNavigation: Button = findViewById(R.id.buttonMoveToLearnNavigation)
+        btnMoveToLearnNavigation.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v?.id) {
-            R.id.buttonMoveToFlexibleFragment -> {
-                val moveToFlexibleFragment = Intent(this@MainActivity, FlexibleFragment::class.java)
-                startActivity(moveToFlexibleFragment)
+            R.id.buttonMoveToLearnFragment -> {
+                val moveToLearnFragment = Intent(this@MainActivity, FlexibleFragment::class.java)
+                startActivity(moveToLearnFragment)
+            }
+
+            R.id.buttonMoveToLearnNavigation -> {
+                val moveToLearnNavigation = Intent(this@MainActivity, MainNavigation::class.java)
+                startActivity(moveToLearnNavigation)
             }
         }
+
     }
 }

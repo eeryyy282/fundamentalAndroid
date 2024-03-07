@@ -20,5 +20,20 @@
     <string name="david_moyes">David Moyes</string>
     <string name="choose">Pilih</string>
     <string name="close">Tutup</string>
+    <string name="learn_navigation">Learn Navigation</string>
+    <string name="learn_fragment">Learn Fragment</string>
     <!-- Fragment String End -->
+
+    <!-- Navigation String Start-->
+    <string name="hello_home_fragment_navigation">Hello Ini Home Fragment</string>
+    <string name="to_profile_navigation">Ke Activity Profile Activity</string>
+    <string name="to_category_navigation">Ke fragment Category</string>
+    <string name="this_profile_navigation">Ini activity Profile</string>
+    <string name="this_category_navigation">Ini fragment Category</string>
+    <string name="category_lifestyle_navigation">Ke fragment Lifestyle</string>
+    <string name="category_sport">Ke fragment Sport</string>
+    <string name="category_name_navigation">Category Name</string>
+    <string name="category_description_navigation">Category Description</string>
+    <string name="to_home">Ke fragment Home</string>
+    <!-- Navigation String End-->
 </resources>
