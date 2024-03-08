@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.fundamentalandroid.learnappbar.MainActivityAppBar
 import com.example.fundamentalandroid.learnfragment.FlexibleFragment
 import com.example.fundamentalandroid.learnnavigation.MainNavigation
 
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMoveToLearnNavigation: Button = findViewById(R.id.buttonMoveToLearnNavigation)
         btnMoveToLearnNavigation.setOnClickListener(this)
+
+        val btnMoveToLearnAppBar: Button = findViewById(R.id.buttonMoveToLearnAppBar)
+        btnMoveToLearnAppBar.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -39,6 +43,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.buttonMoveToLearnNavigation -> {
                 val moveToLearnNavigation = Intent(this@MainActivity, MainNavigation::class.java)
                 startActivity(moveToLearnNavigation)
+            }
+            R.id.buttonMoveToLearnAppBar -> {
+                val moveToLearnAppBar = Intent(this@MainActivity, MainActivityAppBar::class.java)
+                startActivity(moveToLearnAppBar)
             }
         }
 

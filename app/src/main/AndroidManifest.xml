@@ -13,11 +13,17 @@
         android:theme="@style/Theme.FundamentalAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".learnappbar.MenuActivityAppBar"
+            android:exported="false" />
+        <activity
+            android:name=".learnappbar.MainActivityAppBar"
+            android:exported="false" />
+        <activity
             android:name=".learnnavigation.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".learnnavigation.MainNavigation"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".learnfragment.ProfileActivity"
             android:exported="false" />
