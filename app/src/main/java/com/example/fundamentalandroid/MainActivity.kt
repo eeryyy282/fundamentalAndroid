@@ -8,47 +8,42 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.fundamentalandroid.databinding.ActivityMainBinding
 import com.example.fundamentalandroid.learnappbar.MainActivityAppBar
 import com.example.fundamentalandroid.learnfragment.FlexibleFragment
 import com.example.fundamentalandroid.learnnavigation.MainNavigation
+import com.example.fundamentalandroid.learnnavigationdrawer.MainActivityNavigationDrawer
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val btnMoveToLearnFragment: Button = findViewById(R.id.buttonMoveToLearnFragment)
-        btnMoveToLearnFragment.setOnClickListener(this)
-
-        val btnMoveToLearnNavigation: Button = findViewById(R.id.buttonMoveToLearnNavigation)
-        btnMoveToLearnNavigation.setOnClickListener(this)
-
-        val btnMoveToLearnAppBar: Button = findViewById(R.id.buttonMoveToLearnAppBar)
-        btnMoveToLearnAppBar.setOnClickListener(this)
-    }
-
-    override fun onClick(v: View?) {
-        when(v?.id) {
-            R.id.buttonMoveToLearnFragment -> {
-                val moveToLearnFragment = Intent(this@MainActivity, FlexibleFragment::class.java)
-                startActivity(moveToLearnFragment)
+        with(binding) {
+            buttonMoveToLearnFragment.setOnClickListener {
+                val btnMoveToLearnFragment = Intent(this@MainActivity, FlexibleFragment::class.java)
+                startActivity(btnMoveToLearnFragment)
             }
-
-            R.id.buttonMoveToLearnNavigation -> {
-                val moveToLearnNavigation = Intent(this@MainActivity, MainNavigation::class.java)
-                startActivity(moveToLearnNavigation)
+            buttonMoveToLearnNavigation.setOnClickListener {
+                val btnMoveToLearnNavigation = Intent(this@MainActivity, MainNavigation::class.java)
+                startActivity(btnMoveToLearnNavigation)
             }
-            R.id.buttonMoveToLearnAppBar -> {
-                val moveToLearnAppBar = Intent(this@MainActivity, MainActivityAppBar::class.java)
-                startActivity(moveToLearnAppBar)
+            buttonMoveToLearnAppBar.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MainActivityAppBar::class.java))
+            }
+            buttonMoveToLearnNavigationDrawer.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MainActivityNavigationDrawer::class.java))
             }
         }
-
     }
+
 }
