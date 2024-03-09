@@ -12,7 +12,6 @@ import com.example.fundamentalandroid.databinding.ActivityMainBinding
 import com.example.fundamentalandroid.learnappbar.MainActivityAppBar
 import com.example.fundamentalandroid.learnfragment.FlexibleFragment
 import com.example.fundamentalandroid.learnnavigation.MainNavigation
-import com.example.fundamentalandroid.learnnavigationdrawer.MainActivityNavigationDrawer
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -39,9 +38,6 @@ class MainActivity : AppCompatActivity() {
             }
             buttonMoveToLearnAppBar.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MainActivityAppBar::class.java))
-            }
-            buttonMoveToLearnNavigationDrawer.setOnClickListener {
-                startActivity(Intent(this@MainActivity, MainActivityNavigationDrawer::class.java))
             }
         }
     }
