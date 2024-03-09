@@ -128,5 +128,15 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="learn_tab_layout_view_pager_2">Learn Tab Layout View Pager 2</string>
     <!-- AppBar String End -->
+
+    <!-- Tab layout string start -->
+    <string name="tab_text_1">Home</string>
+    <string name="tab_text_2">Profile</string>
+    <string name="tab_text_3">Setting</string>
+    <string name="content_tab_home">Welcome Home</string>
+    <string name="content_tab_profile">Change your Profile here</string>
+    <string name="content_tab_text">This is Tab %1$d</string>
+    <!-- Tab layout string end -->
 </resources>
