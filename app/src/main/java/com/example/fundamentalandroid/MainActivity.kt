@@ -13,6 +13,7 @@ import com.example.fundamentalandroid.learnappbar.MainActivityAppBar
 import com.example.fundamentalandroid.learnfragment.FlexibleFragment
 import com.example.fundamentalandroid.learnnavigation.MainNavigation
 import com.example.fundamentalandroid.learntablayout.MainActivityTabLayout
+import com.example.fundamentalandroid.learntablayout.SectionPageAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -45,6 +46,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, MainActivityTabLayout::class.java))
             }
         }
+
+        // send data to tab layout adapter for consume
+        val sectionsPageAdapter = SectionPageAdapter(this)
+        sectionsPageAdapter.appName = resources.getString(R.string.app_name)
+
     }
 
 }

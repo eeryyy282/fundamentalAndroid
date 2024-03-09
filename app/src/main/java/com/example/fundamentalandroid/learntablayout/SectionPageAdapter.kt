@@ -1,5 +1,6 @@
 package com.example.fundamentalandroid.learntablayout
 
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -7,17 +8,19 @@ import com.example.fundamentalandroid.learntablayout.fragment.HomeFragmentTabLay
 import com.example.fundamentalandroid.learntablayout.fragment.ProfileFragmentTabLayout
 
 class SectionPageAdapter (activity: AppCompatActivity): FragmentStateAdapter(activity){
+
+    var appName: String = ""
     override fun getItemCount(): Int {
-        return 2
+        return 3
     }
 
     override fun createFragment(position: Int): Fragment {
-        var fragment: Fragment? = null
-        when(position) {
-            0 -> fragment = HomeFragmentTabLayout()
-            1 -> fragment = ProfileFragmentTabLayout()
+       val fragment = HomeFragmentTabLayout()
+        fragment.arguments = Bundle().apply {
+            putInt(HomeFragmentTabLayout.ARG_SECTION_NUMBER, position + 1)
+            putString(HomeFragmentTabLayout.ARG_NAME, appName)
         }
-        return fragment as Fragment
+        return fragment
     }
 
 }
