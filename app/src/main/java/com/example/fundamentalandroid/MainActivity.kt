@@ -14,6 +14,7 @@ import com.example.fundamentalandroid.learnfragment.FlexibleFragment
 import com.example.fundamentalandroid.learnnavigation.MainNavigation
 import com.example.fundamentalandroid.learntablayout.MainActivityTabLayout
 import com.example.fundamentalandroid.learntablayout.SectionPageAdapter
+import com.example.fundamentalandroid.learnthread.MainActivityThread
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -44,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 
             buttonMoveToLearnTabLayoutViewPager2.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MainActivityTabLayout::class.java))
+            }
+
+            buttonMoveToLearnBackgroundThread.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MainActivityThread::class.java))
             }
         }
 
