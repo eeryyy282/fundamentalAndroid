@@ -12,6 +12,7 @@ import com.example.fundamentalandroid.databinding.ActivityMainBinding
 import com.example.fundamentalandroid.learnappbar.MainActivityAppBar
 import com.example.fundamentalandroid.learnfragment.FlexibleFragment
 import com.example.fundamentalandroid.learnnavigation.MainNavigation
+import com.example.fundamentalandroid.learnparsing.MainActivityParsing
 import com.example.fundamentalandroid.learntablayout.MainActivityTabLayout
 import com.example.fundamentalandroid.learntablayout.SectionPageAdapter
 import com.example.fundamentalandroid.learnthread.MainActivityThread
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity() {
 
             buttonMoveToLearnBackgroundThread.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MainActivityThread::class.java))
+            }
+            buttonMoveToLearnParsing.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MainActivityParsing::class.java))
             }
         }
 
