@@ -156,4 +156,13 @@
     <string name="learn_parsing">Learn Parsing</string>
     <!-- API parsing string end -->
 
+    <!-- ViewModel String Start -->
+    <string name="width">Lebar</string>
+    <string name="result">Hasil</string>
+    <string name="calculate">Hitung</string>
+    <string name="height">Tinggi</string>
+    <string name="length">Panjang</string>
+    <string name="learn_view_model">Learn View Model</string>
+    <!-- ViewModel String End -->
+
 </resources>

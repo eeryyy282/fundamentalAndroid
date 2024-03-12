@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FundamentalAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".learnviewmodel.MainActivityViewModel"
+            android:exported="false" />
+        <activity
             android:name=".learnparsing.ListQuotesActivityParsing"
             android:exported="false" />
         <activity

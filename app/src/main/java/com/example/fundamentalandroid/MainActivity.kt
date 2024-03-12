@@ -16,6 +16,7 @@ import com.example.fundamentalandroid.learnparsing.MainActivityParsing
 import com.example.fundamentalandroid.learntablayout.MainActivityTabLayout
 import com.example.fundamentalandroid.learntablayout.SectionPageAdapter
 import com.example.fundamentalandroid.learnthread.MainActivityThread
+import com.example.fundamentalandroid.learnviewmodel.MainActivityViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -53,6 +54,9 @@ class MainActivity : AppCompatActivity() {
             }
             buttonMoveToLearnParsing.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MainActivityParsing::class.java))
+            }
+            buttonMoveToLearnViewModel.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MainActivityViewModel::class.java))
             }
         }
 
