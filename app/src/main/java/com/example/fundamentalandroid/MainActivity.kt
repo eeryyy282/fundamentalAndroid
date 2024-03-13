@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.fundamentalandroid.databinding.ActivityMainBinding
 import com.example.fundamentalandroid.learnappbar.MainActivityAppBar
 import com.example.fundamentalandroid.learnfragment.FlexibleFragment
+import com.example.fundamentalandroid.learnlivedata.MainActivityLiveData
 import com.example.fundamentalandroid.learnnavigation.MainNavigation
 import com.example.fundamentalandroid.learnparsing.MainActivityParsing
 import com.example.fundamentalandroid.learntablayout.MainActivityTabLayout
@@ -57,6 +58,9 @@ class MainActivity : AppCompatActivity() {
             }
             buttonMoveToLearnViewModel.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MainActivityViewModel::class.java))
+            }
+            buttonMoveToLearnLiveData.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MainActivityLiveData::class.java))
             }
         }
 

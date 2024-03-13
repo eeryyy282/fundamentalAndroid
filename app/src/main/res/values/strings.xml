@@ -163,6 +163,12 @@
     <string name="height">Tinggi</string>
     <string name="length">Panjang</string>
     <string name="learn_view_model">Learn View Model</string>
+    <string name="learn_live_data">Learn Live Data</string>
     <!-- ViewModel String End -->
+
+    <!-- LiveData String Start -->
+    <string name="seconds">%d seconds elapsed</string>
+    <string name="hello_dicoding">Hello Dicoding!</string>
+    <!-- LiveData String End -->
 
 </resources>
