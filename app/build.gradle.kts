@@ -61,5 +61,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.android.async.http)
     implementation(libs.androidx.activity.ktx)
+    implementation (libs.androidx.fragment.ktx)
 
 }
