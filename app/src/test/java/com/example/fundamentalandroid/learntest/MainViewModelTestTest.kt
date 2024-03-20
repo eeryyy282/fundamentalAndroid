@@ -17,7 +17,7 @@ class MainViewModelTestTest {
     private val dummyWidth = 7.0
 
     private val dummyVolume = 504.0
-    private val dummyCircumference = 100.0
+    private val dummyCircumference = 0.0
     private val dummySurfaceArea = 396.0
 
     @Before
@@ -71,12 +71,12 @@ class MainViewModelTestTest {
         assertEquals(dummySurfaceArea, surfaceArea, 0.0001)
     }
 
-//    @Test
-//    fun testVolume() {
-//        cuboidModel = CuboidModel()
-//        mainViewModelTest = MainViewModelTest(cuboidModel)
-//        mainViewModelTest.save(dummyWidth, dummyLength, dummyHeight)
-//        val volume = mainViewModelTest.getVolume()
-//        assertEquals(dummyVolume, volume, 0.0001)
-//    }
+    @Test
+    fun testVolume() {
+        cuboidModel = CuboidModel()
+        mainViewModelTest = MainViewModelTest(cuboidModel)
+        mainViewModelTest.save(dummyWidth, dummyLength, dummyHeight)
+        val volume = mainViewModelTest.getVolume()
+        assertEquals(dummyVolume, volume, 0.0001)
+    }
 }
