@@ -9,7 +9,7 @@
         android:id="@+id/homeFragmentNavigation"
         android:name="com.example.fundamentalandroid.learnnavigation.fragment.HomeFragmentNavigation"
         android:label="fragment_home_navigation"
-        tools:layout="@layout/fragment_home_navigation" >
+        tools:layout="@layout/fragment_home_navigation">
         <action
             android:id="@+id/action_homeFragmentNavigation_to_categoryFragment"
             app:destination="@id/categoryFragment"
@@ -27,7 +27,7 @@
         android:id="@+id/categoryFragment"
         android:name="com.example.fundamentalandroid.learnnavigation.fragment.CategoryFragment"
         android:label="fragment_category_navigation"
-        tools:layout="@layout/fragment_category_navigation" >
+        tools:layout="@layout/fragment_category_navigation">
         <action
             android:id="@+id/action_categoryFragment_to_detailCategoryFragment"
             app:destination="@id/detailCategoryFragment" />
@@ -41,19 +41,20 @@
         android:id="@+id/detailCategoryFragment"
         android:name="com.example.fundamentalandroid.learnnavigation.fragment.DetailCategoryFragment"
         android:label="fragment_detail_category_navigation"
-        tools:layout="@layout/fragment_detail_category_navigation" >
+        tools:layout="@layout/fragment_detail_category_navigation">
         <argument
             android:name="name"
-            app:argType="string"
-            android:defaultValue="default name"/>
+            android:defaultValue="default name"
+            app:argType="string" />
         <argument
             android:name="stock"
-            app:argType="long"
-            android:defaultValue="0L"/>
+            android:defaultValue="0L"
+            app:argType="long" />
         <action
             android:id="@+id/action_detailCategoryFragment_to_homeFragmentNavigation"
             app:destination="@id/homeFragmentNavigation"
             app:popUpTo="@id/homeFragmentNavigation"
             app:popUpToInclusive="true" />
     </fragment>
+
 </navigation>

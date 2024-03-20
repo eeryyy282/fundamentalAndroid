@@ -15,13 +15,9 @@ import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
-import java.lang.Exception
 
 class MainActivityParsing : AppCompatActivity() {
 
-    companion object {
-        private  val TAG = MainActivityParsing::class.java.simpleName
-    }
     private lateinit var binding: ActivityMainParsingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +41,12 @@ class MainActivityParsing : AppCompatActivity() {
         binding.progressBar.visibility = View.VISIBLE
         val client = AsyncHttpClient()
         val url = "https://quote-api.dicoding.dev/random"
-        client.get(url, object: AsyncHttpResponseHandler(){
-            override fun onSuccess(statusCode: Int, headers: Array<Header>, responseBody: ByteArray) {
+        client.get(url, object : AsyncHttpResponseHandler() {
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Array<Header>,
+                responseBody: ByteArray
+            ) {
                 binding.progressBar.visibility = View.INVISIBLE
 
                 val result = String(responseBody)
@@ -73,7 +73,7 @@ class MainActivityParsing : AppCompatActivity() {
             ) {
                 binding.progressBar.visibility = View.INVISIBLE
 
-                val errorMassage = when(statusCode) {
+                val errorMassage = when (statusCode) {
                     401 -> "$statusCode : Bad Request"
                     403 -> "$statusCode : Forbidden"
                     404 -> "$statusCode : Not Found"
@@ -83,5 +83,9 @@ class MainActivityParsing : AppCompatActivity() {
             }
 
         })
+    }
+
+    companion object {
+        private val TAG = MainActivityParsing::class.java.simpleName
     }
 }

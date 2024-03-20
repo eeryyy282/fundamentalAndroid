@@ -24,7 +24,7 @@ class MainActivityAppBar : AppCompatActivity() {
             insets
         }
 
-        binding.topAppBar.setOnMenuItemClickListener{ menuItem ->
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu1 -> {
                     supportFragmentManager.beginTransaction()
@@ -33,11 +33,13 @@ class MainActivityAppBar : AppCompatActivity() {
                         .commit()
                     true
                 }
+
                 R.id.menu2 -> {
                     val intent = Intent(this, MenuActivityAppBar::class.java)
                     startActivity(intent)
                     true
                 }
+
                 else -> false
             }
         }

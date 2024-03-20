@@ -11,6 +11,7 @@ import com.example.fundamentalandroid.R
 import com.example.fundamentalandroid.learnfragment.fragment.HomeFragment
 
 class FlexibleFragment : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

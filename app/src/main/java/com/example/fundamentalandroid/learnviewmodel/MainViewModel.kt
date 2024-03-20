@@ -2,7 +2,7 @@ package com.example.fundamentalandroid.learnviewmodel
 
 import androidx.lifecycle.ViewModel
 
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
     var result = 0
 
     fun calculate(width: String, height: String, length: String) {

@@ -6,22 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.fundamentalandroid.R
-import com.example.fundamentalandroid.databinding.FragmentCategoryBinding
 import com.example.fundamentalandroid.databinding.FragmentCategoryNavigationBinding
 
 
 class CategoryFragment : Fragment() {
 
     private var _binding: FragmentCategoryNavigationBinding? = null
-    private  val binding get() = _binding!!
-
-
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-      _binding = FragmentCategoryNavigationBinding.inflate(inflater, container, false)
+        _binding = FragmentCategoryNavigationBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -30,7 +26,8 @@ class CategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnCategoryLifestyle.setOnClickListener { view ->
-            val toDetailCategoryFragment = CategoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment()
+            val toDetailCategoryFragment =
+                CategoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment()
             toDetailCategoryFragment.name = "Lifestyle"
             toDetailCategoryFragment.stock = 7
             view.findNavController().navigate(toDetailCategoryFragment)
@@ -38,4 +35,4 @@ class CategoryFragment : Fragment() {
     }
 
 
-    }
+}

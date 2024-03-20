@@ -18,9 +18,6 @@ import cz.msebera.android.httpclient.Header
 import org.json.JSONArray
 
 class ListQuotesActivityParsing : AppCompatActivity() {
-    companion object {
-        private val TAG = ListQuotesActivityParsing::class.java.simpleName
-    }
 
     private lateinit var binding: ActivityListQuotesParsingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +64,8 @@ class ListQuotesActivityParsing : AppCompatActivity() {
                     val adapter = QuoteAdapterParsing(listQuote)
                     binding.listQuotes.adapter = adapter
                 } catch (e: Exception) {
-                    Toast.makeText(this@ListQuotesActivityParsing, e.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ListQuotesActivityParsing, e.message, Toast.LENGTH_SHORT)
+                        .show()
                     e.printStackTrace()
                 }
             }
@@ -79,15 +77,20 @@ class ListQuotesActivityParsing : AppCompatActivity() {
                 p3: Throwable
             ) {
                 binding.progressBar.visibility = View.INVISIBLE
-                val errorMassage = when(p0) {
+                val errorMassage = when (p0) {
                     401 -> "$p0 : Bad Request"
                     403 -> "$p0 : Forbidden"
                     404 -> "$p0 : Not Found"
                     else -> "$p0 : ${p3.message}"
                 }
-                Toast.makeText(this@ListQuotesActivityParsing, errorMassage, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ListQuotesActivityParsing, errorMassage, Toast.LENGTH_SHORT)
+                    .show()
             }
 
         })
+    }
+
+    companion object {
+        private val TAG = ListQuotesActivityParsing::class.java.simpleName
     }
 }

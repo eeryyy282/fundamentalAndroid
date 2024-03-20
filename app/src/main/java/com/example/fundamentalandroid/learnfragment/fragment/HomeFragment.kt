@@ -1,11 +1,11 @@
 package com.example.fundamentalandroid.learnfragment.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.fundamentalandroid.R
 
@@ -27,12 +27,16 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if(v?.id == R.id.btn_category) {
+        if (v?.id == R.id.btn_category) {
             val categoryFragment = CategoryFragment()
             val fragmentManager = parentFragmentManager
             fragmentManager.commit {
                 addToBackStack(null)
-                replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
+                replace(
+                    R.id.frame_container,
+                    categoryFragment,
+                    CategoryFragment::class.java.simpleName
+                )
             }
         }
     }

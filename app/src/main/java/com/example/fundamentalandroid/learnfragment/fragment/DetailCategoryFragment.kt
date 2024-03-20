@@ -2,13 +2,13 @@ package com.example.fundamentalandroid.learnfragment.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.fundamentalandroid.R
 import com.example.fundamentalandroid.learnfragment.ProfileActivity
 
@@ -21,12 +21,6 @@ class DetailCategoryFragment : Fragment() {
     private lateinit var btnShowDialog: Button
 
     var description: String? = null
-
-    companion object {
-        var EXTRA_NAME = "extra_name"
-        var EXTRA_DESCRIPTION = "extra_description"
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,18 +37,18 @@ class DetailCategoryFragment : Fragment() {
         btnProfile = view.findViewById(R.id.btn_profile)
         btnShowDialog = view.findViewById(R.id.btn_show_dialog)
 
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             val descFromBundle = savedInstanceState.getString(EXTRA_DESCRIPTION)
             description = descFromBundle
         }
 
-        if(arguments != null) {
+        if (arguments != null) {
             val categoryName = arguments?.getString(EXTRA_NAME)
             tvCategoryName.text = categoryName
             tvCategoryDescription.text = description
         }
 
-        btnShowDialog.setOnClickListener{
+        btnShowDialog.setOnClickListener {
             val optionDialogFragment = OptionDialogFragment()
 
             val fragmentManager = childFragmentManager
@@ -67,10 +61,16 @@ class DetailCategoryFragment : Fragment() {
         }
     }
 
-    internal var optionDialogListener: OptionDialogFragment.OnOptionDialogListener = object : OptionDialogFragment.OnOptionDialogListener {
-        override fun onOptionChosen(text: String?) {
-            Toast.makeText(requireActivity(), text, Toast.LENGTH_SHORT).show()
+    internal var optionDialogListener: OptionDialogFragment.OnOptionDialogListener =
+        object : OptionDialogFragment.OnOptionDialogListener {
+            override fun onOptionChosen(text: String?) {
+                Toast.makeText(requireActivity(), text, Toast.LENGTH_SHORT).show()
+            }
         }
+
+    companion object {
+        var EXTRA_NAME = "extra_name"
+        var EXTRA_DESCRIPTION = "extra_description"
     }
 
 }

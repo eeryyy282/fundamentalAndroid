@@ -1,8 +1,6 @@
 package com.example.fundamentalandroid.learnthread
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -15,7 +13,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.concurrent.Executors
 
 class MainActivityThread : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,19 +30,20 @@ class MainActivityThread : AppCompatActivity() {
 
 
         btnStart.setOnClickListener {
-           lifecycleScope.launch(Dispatchers.Default) {
-               for(i in 0..10) {
-                   delay(500)
-                   val percentage = i * 10
-                   withContext(Dispatchers.Main) {
-                       if(percentage == 100) {
-                           tvStatus.setText(R.string.task_completed)
-                       } else {
-                           tvStatus.text = String.format(getString(R.string.compressing), percentage)
-                       }
-                   }
-               }
-           }
+            lifecycleScope.launch(Dispatchers.Default) {
+                for (i in 0..10) {
+                    delay(500)
+                    val percentage = i * 10
+                    withContext(Dispatchers.Main) {
+                        if (percentage == 100) {
+                            tvStatus.setText(R.string.task_completed)
+                        } else {
+                            tvStatus.text =
+                                String.format(getString(R.string.compressing), percentage)
+                        }
+                    }
+                }
+            }
         }
     }
 }

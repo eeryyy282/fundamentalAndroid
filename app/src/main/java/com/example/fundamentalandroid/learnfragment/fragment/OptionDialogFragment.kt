@@ -2,14 +2,12 @@ package com.example.fundamentalandroid.learnfragment.fragment
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.fundamentalandroid.R
 
@@ -25,8 +23,10 @@ class OptionDialogFragment : DialogFragment() {
     private lateinit var rbMoyes: RadioButton
     private var optionDialogListener: OnOptionDialogListener? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_option_dialog, container, false)
     }
 

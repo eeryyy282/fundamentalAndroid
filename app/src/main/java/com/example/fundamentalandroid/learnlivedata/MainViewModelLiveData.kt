@@ -7,13 +7,10 @@ import androidx.lifecycle.ViewModel
 import java.util.Timer
 import java.util.TimerTask
 
-class MainViewModelLiveData: ViewModel() {
-    companion object {
-        private const val ONE_SECOND = 1000
-    }
+class MainViewModelLiveData : ViewModel() {
 
-    private  val mInitialTime = SystemClock.elapsedRealtime()
-    private  val mElapsedTime = MutableLiveData<Long?>()
+    private val mInitialTime = SystemClock.elapsedRealtime()
+    private val mElapsedTime = MutableLiveData<Long?>()
 
     init {
         val timer = Timer()
@@ -28,5 +25,9 @@ class MainViewModelLiveData: ViewModel() {
 
     fun getElapsedTime(): LiveData<Long?> {
         return mElapsedTime
+    }
+
+    companion object {
+        private const val ONE_SECOND = 1000
     }
 }

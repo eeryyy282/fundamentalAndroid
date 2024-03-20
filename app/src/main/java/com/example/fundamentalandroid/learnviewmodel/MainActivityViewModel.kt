@@ -6,15 +6,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import com.example.fundamentalandroid.R
 import com.example.fundamentalandroid.databinding.ActivityMainViewModelBinding
 
 class MainActivityViewModel : AppCompatActivity() {
 
     private lateinit var activityMainViewModelBinding: ActivityMainViewModelBinding
-//    private lateinit var viewModel: MainViewModel
+
+    //    private lateinit var viewModel: MainViewModel
     private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,12 +41,15 @@ class MainActivityViewModel : AppCompatActivity() {
                 width.isEmpty() -> {
                     activityMainViewModelBinding.edtWidth.error = "Masih Kosong"
                 }
+
                 height.isEmpty() -> {
                     activityMainViewModelBinding.edtHeight.error = "Masih Kosong"
                 }
+
                 length.isEmpty() -> {
                     activityMainViewModelBinding.edtLength.error = "Masih Kosong"
                 }
+
                 else -> {
                     viewModel.calculate(width, height, length)
                     displayResult()

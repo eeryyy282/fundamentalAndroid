@@ -1,10 +1,10 @@
 package com.example.fundamentalandroid.learnnavigation.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.fundamentalandroid.R
 import com.example.fundamentalandroid.databinding.FragmentDetailCategoryNavigationBinding
@@ -12,8 +12,7 @@ import com.example.fundamentalandroid.databinding.FragmentDetailCategoryNavigati
 class DetailCategoryFragment : Fragment() {
 
     private var _binding: FragmentDetailCategoryNavigationBinding? = null
-    private  val binding get() = _binding!!
-
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +32,7 @@ class DetailCategoryFragment : Fragment() {
         binding.tvCategoryNameNavigation.text = dataName
         binding.tvCategoryDescription.text = "Stock : $dataDescription"
 
-        binding.btnHome.setOnClickListener (
+        binding.btnHome.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_detailCategoryFragment_to_homeFragmentNavigation)
         )
 
