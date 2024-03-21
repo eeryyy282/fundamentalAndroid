@@ -27,7 +27,7 @@ class MenuActivityAppBar : AppCompatActivity() {
             searchView.setupWithSearchBar(searchBar)
             searchView
                 .editText
-                .setOnEditorActionListener { textView, actionId, event ->
+                .setOnEditorActionListener { _, _, _ ->
                     searchBar.setText(searchView.text)
                     searchView.hide()
                     Toast.makeText(this@MenuActivityAppBar, searchView.text, Toast.LENGTH_SHORT)

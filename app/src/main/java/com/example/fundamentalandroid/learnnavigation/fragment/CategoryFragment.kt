@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.fundamentalandroid.databinding.FragmentCategoryNavigationBinding
 
-
 class CategoryFragment : Fragment() {
 
     private var _binding: FragmentCategoryNavigationBinding? = null
